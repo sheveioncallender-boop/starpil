@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-  <record id="sale_order_form_starpil_loyalty" model="ir.ui.view">
-    <field name="name">sale.order.form.starpil.loyalty</field><field name="model">sale.order</field><field name="inherit_id" ref="sale.view_order_form"/>
-    <field name="arch" type="xml">
-      <xpath expr="//notebook" position="inside"><page string="Starpil Rewards"><group><field name="starpil_points_estimate"/><field name="starpil_points_posted"/><field name="starpil_points_posted_count"/><field name="starpil_loyalty_transaction_id"/></group></page></xpath>
-    </field>
-  </record>
-</odoo>
