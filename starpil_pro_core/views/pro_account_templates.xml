@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="pro_account_page" name="Starpil Pro Account">
+    <t t-call="website.layout">
+      <main class="starpil-live-site">
+        <section class="pro-page-hero">
+          <div class="pro-page-copy">
+            <span class="kicker kicker-light">Starpil Pro Portal</span>
+            <h1>Professional access,<br/><em>earned by expertise.</em></h1>
+            <p>Starpil Wax is supplied exclusively to certified professionals. Create your account once, verify your email and submit your credential for review.</p>
+            <div class="hero-actions"><a class="button button-light" href="#apply">Start your application</a><a class="text-link text-link-light" href="/web/login?redirect=/my/starpil">Already approved? Sign in ↗</a></div>
+          </div>
+          <div class="pro-page-visual"><img src="/starpil_website/static/src/img/esthie-pro.webp" alt="Starpil professional esthetician"/></div>
+        </section>
+
+        <section class="process-section">
+          <div class="section-heading"><div><span class="kicker">How approval works</span><h2>Three steps to Pro.</h2></div><p>Your professional pricing remains protected while the Starpil team verifies each account.</p></div>
+          <div class="process-grid">
+            <article class="process-card"><span>1</span><h3>Create and verify</h3><p>Enter your details once, create your password and use the secure link sent to your email.</p></article>
+            <article class="process-card"><span>2</span><h3>Upload certification</h3><p>Submit a clear photograph or PDF of your professional certificate for administrator review.</p></article>
+            <article class="process-card"><span>3</span><h3>Get approved access</h3><p>Once approved, the same login unlocks USD pricing, ordering, invoices and Pro Rewards.</p></article>
+          </div>
+        </section>
+
+        <section class="application-section" id="apply">
+          <div class="application-intro"><span class="kicker">Professional application</span><h2>Ready to unlock your catalogue?</h2><p>Complete the application below. Your submission, email verification and approval status are managed live in Odoo.</p><div class="application-note"><strong>Please note:</strong> Starpil Wax is sold only to certified professionals. Prices remain hidden until the application is approved.</div></div>
+          <form action="/pro-account/apply" method="post" enctype="multipart/form-data" class="application-form">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <h3>Create Your Pro Account</h3>
+            <p class="application-form-intro">Your login is created one time. Verify your email after submission, then the Starpil team will review your professional certification.</p>
+            <div t-if="error" class="starpil-form-error" role="alert"><strong>Application not submitted</strong><p t-out="error"/></div>
+            <div class="form-row"><div class="field"><label for="business-name">Company or salon name</label><input id="business-name" name="business_name" required="required" t-att-value="form.get('business_name','')"/></div><div class="field"><label for="contact-name">Full name</label><input id="contact-name" name="name" required="required" autocomplete="name" t-att-value="form.get('name','')"/></div></div>
+            <div class="form-row"><div class="field"><label for="pro-phone">Contact number</label><input id="pro-phone" name="phone" type="tel" required="required" autocomplete="tel" t-att-value="form.get('phone','')"/></div><div class="field"><label for="professional-role">Professional role</label><select id="professional-role" name="professional_role" required="required"><option value="">Select your role</option><option value="esthetician" t-att-selected="form.get('professional_role') == 'esthetician'">Certified Esthetician</option><option value="salon_owner" t-att-selected="form.get('professional_role') == 'salon_owner'">Salon / Spa Owner</option><option value="educator" t-att-selected="form.get('professional_role') == 'educator'">Educator</option><option value="student" t-att-selected="form.get('professional_role') == 'student'">Student</option><option value="other" t-att-selected="form.get('professional_role') == 'other'">Other Certified Professional</option></select></div></div>
+            <div class="field"><label for="pro-email">Email address</label><input id="pro-email" name="email" type="email" autocomplete="email" required="required" t-att-value="form.get('email','')"/><small>We will send the account verification link to this address.</small></div>
+            <div class="form-row"><div class="field"><label for="pro-password">Create password</label><input id="pro-password" name="password" type="password" minlength="8" autocomplete="new-password" required="required"/></div><div class="field"><label for="pro-password-confirm">Confirm password</label><input id="pro-password-confirm" name="password_confirmation" type="password" minlength="8" autocomplete="new-password" required="required"/></div></div>
+            <div class="field"><label>Professional certificate</label><label class="upload-field" for="certificate"><input id="certificate" type="file" accept="image/jpeg,image/png,application/pdf" name="certificate" required="required"/><strong>Upload a photo or PDF of your certificate</strong><span>JPG, PNG or PDF · Maximum 8 MB</span></label></div>
+            <div class="field"><label for="pro-notes">Additional notes <small>(optional)</small></label><textarea id="pro-notes" name="notes" rows="3"><t t-out="form.get('notes','')"/></textarea></div>
+            <label class="application-consent"><input type="checkbox" name="professional_declaration" value="1" required="required"/><span>I confirm that the information submitted is accurate and that I am applying for professional access.</span></label>
+            <button class="button button-dark" type="submit">Create account &amp; verify email</button>
+          </form>
+        </section>
+      </main>
+    </t>
+  </template>
+
+  <template id="pro_account_check_email" name="Check Your Email">
+    <t t-call="website.layout"><main class="pending-main"><section class="pending-card"><div class="pending-mark">✉</div><span class="kicker">Account verification</span><h1>Check your<br/><em>email.</em></h1><p>Use the verification link we sent to confirm that your email is real. Your application moves to administrator review as soon as verification is complete.</p><div class="pending-steps"><div class="is-current"><span>1</span><div><strong>Verify your email</strong><small>Open the secure link in your inbox.</small></div></div><div><span>2</span><div><strong>Professional review</strong><small>The Starpil team checks the information and certificate.</small></div></div><div><span>3</span><div><strong>Pricing unlocked</strong><small>You receive an email when your account is approved.</small></div></div></div><div class="pending-note"><strong>Prices remain protected.</strong><p>You can sign in only after your email is verified, and professional pricing becomes visible only after administrator approval.</p></div><div class="pending-actions"><a class="button button-dark" href="/">Return to home</a><a class="text-link" href="/contact">Need help? Contact us ↗</a></div></section><aside class="pending-aside"><div><img src="/starpil_website/static/src/img/starpil-wordmark.png" alt="Starpil"/><span>PRO ACCESS</span></div><h2>One account.<br/>A complete professional portal.</h2><p>After approval, the same secure login gives you protected pricing, real-time stock, orders, invoices and your digital Pro Rewards card.</p><a href="/about">Learn about Starpil Caribbean ↗</a></aside></main></t>
+  </template>
+
+  <template id="pro_account_verification_result" name="Verification Result">
+    <t t-call="website.layout"><main class="pending-main"><t t-if="verified"><section class="pending-card"><div class="pending-mark">✓</div><span class="kicker">Email verified</span><h1>Your application is<br/><em>in review.</em></h1><p>Your email is confirmed and your professional application is now waiting for administrator review. We will email you as soon as a decision is recorded in Odoo.</p><div class="pending-steps"><div class="is-complete"><span>✓</span><div><strong>Email verified</strong><small>Your account is protected from spam sign-ups.</small></div></div><div class="is-current"><span>2</span><div><strong>Professional review</strong><small>The Starpil team is checking your information and certificate.</small></div></div><div><span>3</span><div><strong>Pricing unlocked</strong><small>Approval activates your professional catalogue and account.</small></div></div></div><div class="pending-note"><strong>No second account is needed.</strong><p>Once approved, sign in with the email and password you already created.</p></div><div class="pending-actions"><a class="button button-dark" href="/">Return to home</a><a class="text-link" href="/contact">Contact support ↗</a></div></section></t><t t-else=""><section class="pending-card"><div class="pending-mark pending-mark-error">!</div><span class="kicker">Verification unavailable</span><h1>This link cannot<br/><em>be used.</em></h1><p>The verification link is invalid, expired or was already completed. Contact the Starpil team if you need help with your application.</p><div class="pending-actions"><a class="button button-dark" href="/contact">Contact support</a><a class="text-link" href="/pro-account">Start a new application ↗</a></div></section></t><aside class="pending-aside"><div><img src="/starpil_website/static/src/img/starpil-wordmark.png" alt="Starpil"/><span>PRO ACCESS</span></div><h2>Protected pricing.<br/>Real professional access.</h2><p>Every Pro application is verified before the account can view prices or place an order.</p><a href="/about">Learn about Starpil Caribbean ↗</a></aside></main></t>
+  </template>
+</odoo>

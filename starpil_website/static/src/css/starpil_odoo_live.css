@@ -1,0 +1,333 @@
+/* Odoo-specific bridge for the approved V11 Starpil experience. */
+.starpil-odoo-storefront,
+.starpil-live-site {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.product-tabs a,
+.shop-filter a {
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.product-tabs a:hover,
+.product-tabs a.is-active,
+.shop-filter a:hover,
+.shop-filter a.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.product-quick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+}
+.starpil-card-points {
+  display: block;
+  margin-top: 7px;
+  color: #a3335c;
+  font-size: 10px;
+  font-weight: 700;
+}
+.starpil-empty-catalogue {
+  grid-column: 1 / -1;
+  padding: 55px;
+  border: 1px solid var(--line);
+  background: #fff;
+  text-align: center;
+}
+.starpil-empty-catalogue h3 {
+  margin-bottom: 10px;
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 400;
+}
+.starpil-quantity-input {
+  width: 86px;
+  min-height: 54px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  text-align: center;
+}
+
+.starpil-live-section {
+  width: min(var(--container), calc(100% - 64px));
+  min-height: 620px;
+  margin: auto;
+  padding: 80px 0 110px;
+}
+.starpil-shop-title h1,
+.starpil-live-checkout h1 {
+  margin: 8px 0 16px;
+  font-family: var(--serif);
+  font-size: clamp(48px, 6vw, 78px);
+  font-weight: 400;
+}
+.starpil-live-empty {
+  padding: 65px 30px;
+  border: 1px solid var(--line);
+  background: #fff;
+  text-align: center;
+}
+.starpil-live-cart-layout,
+.starpil-live-checkout {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, .55fr);
+  gap: 40px;
+  align-items: start;
+}
+.starpil-live-cart-line {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 105px minmax(0, 1fr) 125px 115px;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.starpil-live-cart-line img {
+  width: 105px;
+  height: 105px;
+  padding: 8px;
+  object-fit: contain;
+  background: #f1efeb;
+}
+.starpil-live-cart-line small { color: var(--muted); font-size: 10px; }
+.starpil-live-cart-line h2 { margin: 4px 0; font-family: var(--serif); font-size: 23px; font-weight: 400; }
+.starpil-live-cart-line form { display: flex; gap: 5px; }
+.starpil-live-cart-line form input { width: 55px; padding: 8px; border: 1px solid var(--line); }
+.starpil-live-cart-line form button { border: 0; background: #ffdfeb; color: #7f284a; font-size: 10px; font-weight: 800; }
+.starpil-live-summary {
+  position: sticky;
+  top: 20px;
+  padding: 30px;
+  background: #f8f3f5;
+}
+.starpil-live-summary > div:not(.starpil-points-box) {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5d6dc;
+}
+.starpil-live-total { margin-top: 6px; border-bottom: 0 !important; font-size: 20px; }
+.starpil-live-summary .button { width: 100%; margin-top: 16px; }
+.starpil-points-box {
+  margin: 19px 0;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #fff0f5;
+  color: #a3335c;
+}
+.starpil-points-box p { margin: 0; display: flex; flex-direction: column; }
+.starpil-points-box small { color: #7e6971; font-size: 9px; }
+.starpil-checkout-confidence { margin-top: 28px; display: grid; gap: 12px; font-size: 13px; font-weight: 700; }
+.starpil-coupon-form { margin: 20px 0; }
+.starpil-coupon-form label { display: block; margin-bottom: 7px; font-size: 11px; font-weight: 800; text-transform: uppercase; }
+.starpil-coupon-form > div { display: flex; }
+.starpil-coupon-form input { min-width: 0; flex: 1; padding: 12px; border: 1px solid var(--line); }
+.starpil-coupon-form button { padding: 0 18px; border: 0; background: var(--ink); color: #fff; font-weight: 800; }
+.starpil-return-link { display: block; margin-top: 13px; color: #a3335c; text-align: center; }
+
+.starpil-checkout-page {
+  min-height: 760px;
+  background: #faf9f7;
+}
+.starpil-checkout-page .checkout-card form > .button {
+  min-width: 215px;
+}
+.starpil-checkout-page .field input,
+.starpil-checkout-page .field select,
+.starpil-checkout-page .field textarea {
+  border-radius: 0;
+  color: var(--ink);
+  font: inherit;
+}
+.starpil-checkout-page .field .is-invalid {
+  border-color: #bd3345;
+  background: #fff7f8;
+  box-shadow: 0 0 0 3px rgba(189,51,69,.09);
+}
+.starpil-address-feedback {
+  min-height: 22px;
+  margin: 2px 0 12px;
+  color: #71696b;
+  font-size: 11px;
+}
+.starpil-address-feedback.is-error,
+.starpil-inline-error {
+  color: #a02f41;
+  font-weight: 700;
+}
+.starpil-address-feedback.is-success,
+.starpil-inline-success {
+  color: #247157;
+  font-weight: 700;
+}
+.starpil-checkout-notice,
+.starpil-checkout-success,
+.starpil-form-error,
+.starpil-form-success {
+  margin-bottom: 18px;
+  padding: 15px 17px;
+  border-left: 4px solid #d59b25;
+  background: #fff8e9;
+  color: #725d31;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.starpil-checkout-success,
+.starpil-form-success {
+  border-left-color: #329271;
+  background: #edf9f4;
+  color: #246650;
+}
+.starpil-form-error {
+  border-left-color: #bd3345;
+  background: #fff2f4;
+  color: #8c2938;
+}
+.starpil-form-error strong,
+.starpil-form-error p { display: block; margin: 0; }
+.starpil-form-error p { margin-top: 4px; }
+.option-grid > form { margin: 0; }
+.starpil-delivery-option {
+  width: 100%;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  background: #fff;
+}
+.starpil-delivery-option:disabled {
+  cursor: not-allowed;
+  opacity: .58;
+}
+.starpil-option-radio {
+  width: 15px;
+  height: 15px;
+  display: block !important;
+  border: 1px solid #a89fa2;
+  border-radius: 50%;
+  background: #fff;
+}
+.starpil-delivery-option.is-selected .starpil-option-radio {
+  border: 4px solid #b54670;
+}
+.starpil-native-payment-form {
+  color: var(--ink);
+  font-family: var(--sans);
+}
+.starpil-native-payment-form .o_payment_form,
+.starpil-native-payment-form .o_payment_option_card,
+.starpil-native-payment-form .list-group {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.starpil-native-payment-form .o_payment_option_card,
+.starpil-native-payment-form .list-group-item {
+  margin-bottom: 10px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 0 !important;
+  background: #fff;
+}
+.starpil-native-payment-form input[type="radio"] { accent-color: #b54670; }
+.starpil-native-payment-form .btn-primary,
+.starpil-native-payment-form button[type="submit"] {
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.starpil-native-payment-form .btn-primary:hover,
+.starpil-native-payment-form button[type="submit"]:hover {
+  border-color: #b54670;
+  background: #b54670;
+}
+.order-confirmation-status.is-paid {
+  border-left-color: #329271;
+  background: #edf9f4;
+}
+.order-confirmation-status.is-paid > span { background: #329271; }
+.member-barcode-image {
+  height: 48px;
+  padding: 4px 8px;
+  object-fit: fill;
+  background: #fff;
+}
+.loyalty-coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+}
+.loyalty-coupon-grid article {
+  min-height: 125px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #e5dfe0;
+  background: #fffafc;
+}
+.loyalty-coupon-grid article > strong {
+  margin: auto 0 7px;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 400;
+}
+.loyalty-coupon-grid article > small { color: #837b7d; font-size: 8px; }
+.loyalty-tier-line .tier-marker {
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.loyalty-tier-line .tier-marker:first-of-type { transform: none; }
+.loyalty-tier-line .tier-marker:last-of-type { transform: translateX(-100%); }
+.pending-mark-error { background: #fde8eb; color: #a53e4c; }
+
+.starpil-mobile-scrim { display: none; }
+
+@media (max-width: 930px) {
+  .site-header .header-actions > .icon-button:not(.bag-trigger) { display: none; }
+  .site-header .header-actions .bag-trigger { display: grid; }
+  .mobile-panel { transform: translateX(-100%); }
+}
+
+@media (max-width: 1060px) {
+  .starpil-live-cart-layout,
+  .starpil-live-checkout { grid-template-columns: 1fr; }
+  .starpil-live-summary { position: static; }
+}
+
+@media (max-width: 720px) {
+  .starpil-live-section { width: calc(100% - 36px); padding-top: 55px; }
+  .starpil-live-cart-line { grid-template-columns: 76px minmax(0, 1fr); }
+  .starpil-live-cart-line img { width: 76px; height: 76px; }
+  .starpil-live-cart-line > form,
+  .starpil-live-cart-line > strong { grid-column: 2; }
+  .starpil-live-summary { padding: 24px 20px; }
+  .starpil-checkout-page .checkout-card form > .button { width: 100%; min-width: 0; }
+  .loyalty-coupon-grid { grid-template-columns: 1fr; }
+  .loyalty-tier-line .tier-marker { font-size: 7px; }
+  .member-barcode-image { height: 45px; }
+}

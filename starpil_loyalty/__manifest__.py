@@ -1,0 +1,23 @@
+{
+    "name": "Starpil Pro Loyalty",
+    "version": "19.0.3.0.0",
+    "category": "Sales/Loyalty",
+    "summary": "Configurable tiers, expiring points, rewards and digital member cards",
+    "license": "LGPL-3",
+    "author": "Starpil Caribbean",
+    "depends": ["starpil_website", "point_of_sale", "sale_management"],
+    "data": [
+        "security/loyalty_security.xml",
+        "security/ir.model.access.csv",
+        "data/loyalty_sequence.xml",
+        "data/loyalty_defaults.xml",
+        "data/loyalty_cron.xml",
+        "views/loyalty_views.xml",
+        "views/product_template_views.xml",
+        "views/sale_order_views.xml",
+        "views/portal_loyalty_templates.xml",
+        "wizards/member_scan_views.xml",
+    ],
+    "installable": True,
+    "application": True,
+}

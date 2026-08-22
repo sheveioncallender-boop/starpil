@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="product_template_form_starpil_website" model="ir.ui.view">
+    <field name="name">product.template.form.starpil.website</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+      <xpath expr="//notebook" position="inside">
+        <page string="Starpil Website" name="starpil_website">
+          <div class="alert alert-info" role="alert">This tab controls the approved Starpil frontend. Product name, variants, price, taxes, inventory and images continue to come from this Odoo product in real time.</div>
+          <group>
+            <group string="Publishing">
+              <field name="is_published" string="Publish on Starpil Website"/>
+              <field name="starpil_website_featured"/>
+              <field name="starpil_website_sequence"/>
+              <field name="starpil_website_badge" placeholder="Best Seller"/>
+              <field name="starpil_website_key" placeholder="coral-film-wax"/>
+              <field name="public_categ_ids" widget="many2many_tags"/>
+            </group>
+            <group string="Access &amp; Merchandising">
+              <field name="starpil_pro_only"/>
+              <field name="starpil_show_stock"/>
+              <field name="starpil_website_hero" widget="image" class="oe_avatar"/>
+            </group>
+          </group>
+          <group string="Website Story"><field name="starpil_website_description" widget="html" nolabel="1"/></group>
+          <group string="Search Preview">
+            <field name="starpil_seo_title"/>
+            <field name="starpil_seo_description"/>
+          </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>
