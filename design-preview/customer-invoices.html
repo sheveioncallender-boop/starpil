@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Starpil Pro customer invoices and receipts design preview.">
+  <title>Invoices & Receipts | Starpil Caribbean</title>
+  <link rel="icon" type="image/png" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head>
+<body class="approved-preview portal-body" data-portal-page="invoices">
+  <div data-site-header></div>
+  <main class="portal-main">
+    <div class="prototype-notice"><strong>Approved customer portal</strong><span>Invoice documents will use Odoo Accounting records.</span></div>
+    <section class="portal-heading"><div><span class="kicker">Account documents</span><h1>Invoices & receipts.</h1><p>View billing status and download documents for your business records.</p></div></section>
+    <div class="portal-layout">
+      <aside data-customer-nav data-active="invoices"></aside>
+      <div class="portal-content">
+        <section class="portal-summary-grid portal-summary-two"><article class="portal-summary-card"><span>Paid this year · USD</span><strong>US$1,448.01</strong><small>Across 12 completed invoices</small></article><article class="portal-summary-card"><span>Amount due · USD</span><strong>US$143.01</strong><small>One invoice awaiting payment</small></article></section>
+        <section class="portal-panel portal-orders-panel"><div class="portal-section-heading portal-section-heading-padded"><div><span>Billing history</span><p>Official invoices and payment receipts.</p></div><button class="admin-button admin-button-secondary" type="button" data-demo-download-all>Download statement</button></div><div class="portal-orders-table-wrap"><table class="portal-orders-table"><thead><tr><th>Invoice</th><th>Order</th><th>Date</th><th>Total</th><th>Payment status</th><th></th></tr></thead><tbody>
+          <tr><td><strong>INV/2026/00814</strong></td><td>ST-24081</td><td>Aug 19, 2026</td><td><strong>US$181.56</strong></td><td><span class="portal-status status-complete">Paid</span></td><td><button type="button" data-demo-invoice>Download PDF ↓</button></td></tr>
+          <tr><td><strong>INV/2026/00802</strong></td><td>ST-24076</td><td>Aug 17, 2026</td><td><strong>US$143.01</strong></td><td><span class="portal-status status-processing">Payment due</span></td><td><button type="button" data-demo-pay-invoice>Pay online →</button></td></tr>
+          <tr><td><strong>INV/2026/00765</strong></td><td>ST-24064</td><td>Aug 11, 2026</td><td><strong>US$130.00</strong></td><td><span class="portal-status status-complete">Paid</span></td><td><button type="button" data-demo-invoice>Download PDF ↓</button></td></tr>
+          <tr><td><strong>INV/2026/00698</strong></td><td>ST-24022</td><td>Jul 28, 2026</td><td><strong>US$241.99</strong></td><td><span class="portal-status status-complete">Paid</span></td><td><button type="button" data-demo-invoice>Download PDF ↓</button></td></tr>
+        </tbody></table></div></section>
+      </div>
+    </div>
+  </main>
+  <div data-site-footer></div><script src="script.js"></script>
+</body>
+</html>
