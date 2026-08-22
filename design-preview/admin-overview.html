@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Real-time Starpil Caribbean Odoo administration overview prototype.">
+  <title>Administration Overview | Starpil Admin</title>
+  <link rel="icon" type="image/png" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body" data-admin-page="overview">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" data-admin-sidebar>
+      <div class="admin-brand"><img src="assets/images/starpil-wordmark.png" alt="Starpil"><span>PRO ADMIN</span></div>
+      <nav class="admin-nav" aria-label="Administration">
+        <small>Workspace</small><a class="is-active" href="admin-overview.html"><span>Overview</span></a><a href="admin-pro-applications.html"><span>Pro Applications</span><em>8</em></a><a href="#"><span>Professional Customers</span></a>
+        <small>Commerce</small><a href="#"><span>Products &amp; Pricing</span></a><a href="#"><span>Orders</span><em>12</em></a><a href="admin-payments.html"><span>Payments</span></a><a href="admin-bank-transfers.html"><span>Bank Transfer Reviews</span><em>4</em></a><a href="admin-shipping.html"><span>Shipping &amp; Fulfilment</span></a><a href="admin-loyalty.html"><span>Loyalty Program</span></a>
+        <small>Communication</small><a href="admin-email.html"><span>Email &amp; Notifications</span></a><a href="#"><span>System Settings</span></a>
+      </nav>
+      <div class="admin-sidebar-foot"><span>Odoo connected in real time</span><small>No duplicate website database</small></div>
+    </aside>
+    <div class="admin-workspace">
+      <header class="admin-topbar"><button class="admin-mobile-menu" type="button" data-admin-menu aria-label="Open admin navigation">☰</button><div class="admin-search"><span>⌕</span><input type="search" placeholder="Search orders, customers, products or transactions"></div><div class="admin-live-pill"><i></i><span>Live</span><time data-live-clock>07:42:18</time></div><div class="admin-profile"><div><strong>Starpil Administrator</strong><span>Full access</span></div><button type="button">SA</button></div></header>
+      <main class="admin-main admin-control-main">
+        <div class="admin-page-heading"><div><span class="admin-eyebrow">Real-time Odoo operations</span><h1>Good morning, Starpil.</h1><p>One live view of orders, payments, fulfilment, applications, stock, email and loyalty activity.</p></div><button class="admin-button admin-button-secondary" type="button" data-admin-refresh>Refresh live data</button></div>
+
+        <section class="admin-stat-grid admin-live-stats">
+          <article><span>Orders today</span><strong>18</strong><small><b>+5</b> since 6:00 AM</small></article><article><span>Sales today · USD</span><strong>US$1,888.24</strong><small>Paid and confirmed</small></article><article><span>Pending payment</span><strong>4</strong><small><b>4</b> bank receipts to review</small></article><article><span>Ready to dispatch</span><strong>7</strong><small>Stock reserved in Odoo</small></article>
+        </section>
+
+        <div class="admin-overview-grid">
+          <section class="admin-panel admin-live-orders">
+            <div class="admin-section-heading"><div><span>Live order activity</span><p>Sales orders update here as Odoo receives each customer action.</p></div><a href="#">Open all orders →</a></div>
+            <div class="admin-live-order-list">
+              <article><span class="live-order-icon is-paid">✓</span><div><strong>SO10492 · Skin Rituals Studio</strong><small>WiPay confirmed · USD · Stock reserved</small></div><b>US$189.12</b><em>Just now</em></article>
+              <article><span class="live-order-icon is-review">↗</span><div><strong>SO10491 · Bare Beauty Lounge</strong><small>USD bank receipt uploaded · Review required</small></div><b>US$109.19</b><em>1 min</em></article>
+              <article><span class="live-order-icon is-pack">□</span><div><strong>SO10490 · Élan Esthetics</strong><small>Local delivery · USD · Picking in progress</small></div><b>US$315.99</b><em>4 min</em></article>
+              <article><span class="live-order-icon is-paid">✓</span><div><strong>SO10489 · Glow Room Tobago</strong><small>Scotia eCom+ confirmed · USD invoice paid</small></div><b>US$131.62</b><em>7 min</em></article>
+            </div>
+          </section>
+
+          <aside class="admin-panel admin-action-queue">
+            <div class="admin-section-heading"><div><span>Needs attention</span><p>Actions waiting for an administrator.</p></div></div>
+            <a href="admin-bank-transfers.html"><span>4</span><p><strong>Bank transfer receipts</strong><small>Oldest waiting 23 minutes</small></p><b>Review →</b></a>
+            <a href="admin-pro-applications.html"><span>8</span><p><strong>Pro applications</strong><small>Email verified and ready</small></p><b>Review →</b></a>
+            <a href="admin-shipping.html"><span>7</span><p><strong>Ready for dispatch</strong><small>Pickings reserved</small></p><b>Open →</b></a>
+            <a href="admin-email.html"><span>1</span><p><strong>Email retry</strong><small>SMTP recovered automatically</small></p><b>Check →</b></a>
+          </aside>
+        </div>
+
+        <section class="admin-system-grid">
+          <a class="admin-panel system-health-card" href="admin-payments.html"><div><span>Payments</span><i class="health-online">All live</i></div><strong>WiPay · Scotia · Bank Transfer</strong><p>Last callback processed 8 seconds ago.</p><small>View payment settings →</small></a>
+          <a class="admin-panel system-health-card" href="admin-shipping.html"><div><span>Shipping</span><i class="health-online">3 methods</i></div><strong>Local delivery and pickup active</strong><p>7 delivery orders are ready to dispatch.</p><small>Manage fulfilment →</small></a>
+          <a class="admin-panel system-health-card" href="admin-email.html"><div><span>Email</span><i class="health-online">Connected</i></div><strong>Transactional SMTP healthy</strong><p>29 messages sent today · 1 retry resolved.</p><small>Open notifications →</small></a>
+        </section>
+
+        <div class="admin-overview-grid admin-overview-grid-bottom">
+          <section class="admin-panel admin-event-stream"><div class="admin-section-heading"><div><span>Real-time event stream</span><p>Immediate changes recorded against the underlying Odoo documents.</p></div><span class="admin-live-label"><i></i>Listening</span></div><div><article><i></i><p><strong>Payment confirmed</strong><small>SO10492 · WiPay reference WP-604381</small></p><time>07:42:12</time></article><article><i></i><p><strong>Loyalty points posted</strong><small>160 points · Skin Rituals Studio</small></p><time>07:42:13</time></article><article><i></i><p><strong>Delivery order created</strong><small>WH/OUT/00291 · Local delivery</small></p><time>07:42:14</time></article><article><i></i><p><strong>Order email sent</strong><small>Confirmation delivered to alana@example.com</small></p><time>07:42:16</time></article></div></section>
+          <aside class="admin-panel admin-stock-watch"><div class="admin-section-heading"><div><span>Stock watch</span><p>Live quantities from Odoo Inventory.</p></div><a href="#">Inventory →</a></div><article><img src="assets/images/coral-tablets.jpg" alt="Coral film wax"><p><strong>Coral Film Wax</strong><small>8 units available</small></p><span class="stock-low">Low</span></article><article><img src="assets/images/blue-soft-wax.jpg" alt="Blue soft wax"><p><strong>Blue Soft Wax</strong><small>14 units available</small></p><span>Watch</span></article><article><img src="assets/images/gold-rollon.png" alt="Gold roll-on wax"><p><strong>Gold Roll-On</strong><small>36 units available</small></p><span class="stock-good">Good</span></article></aside>
+        </div>
+        <p class="admin-sync-note">Live Odoo data · Last interface refresh <span data-last-sync>just now</span> · Recovery checks run only if an external callback is missed.</p>
+      </main>
+    </div>
+  </div>
+  <div class="admin-sidebar-overlay" data-admin-sidebar-overlay></div><div class="toast" role="status" aria-live="polite"></div><script src="script.js"></script>
+</body>
+</html>
