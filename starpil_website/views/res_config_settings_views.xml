@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="res_config_settings_view_form_starpil" model="ir.ui.view">
+    <field name="name">res.config.settings.view.form.starpil</field>
+    <field name="model">res.config.settings</field>
+    <field name="inherit_id" ref="website_sale.res_config_settings_view_form"/>
+    <field name="arch" type="xml">
+      <setting id="pricelists_setting" position="after">
+        <setting id="starpil_primary_currency_setting" string="Starpil Pro Website Currency" help="Approved customers are assigned this professional USD pricelist automatically. Product prices, carts and orders remain native Odoo records.">
+          <div class="content-group">
+            <div class="row mt16">
+              <label for="starpil_primary_pricelist_id" class="col-lg-4 o_light_label"/>
+              <field name="starpil_primary_pricelist_id" options="{'no_create_edit': True}"/>
+            </div>
+            <div class="row mt8">
+              <label for="starpil_secondary_pricelist_id" class="col-lg-4 o_light_label"/>
+              <field name="starpil_secondary_pricelist_id" options="{'no_create_edit': True}"/>
+            </div>
+          </div>
+        </setting>
+      </setting>
+    </field>
+  </record>
+</odoo>
