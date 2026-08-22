@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-  <record id="view_starpil_loyalty_member_scan_form" model="ir.ui.view"><field name="name">starpil.loyalty.member.scan.form</field><field name="model">starpil.loyalty.member.scan</field><field name="arch" type="xml"><form string="Scan Digital Member Card"><group><field name="member_code" placeholder="Scan barcode or type member code"/></group><footer><button name="action_find_member" type="object" string="Open Member" class="btn-primary"/><button string="Cancel" special="cancel" class="btn-secondary"/></footer></form></field></record>
-  <record id="action_starpil_loyalty_member_scan" model="ir.actions.act_window"><field name="name">Scan Member Card</field><field name="res_model">starpil.loyalty.member.scan</field><field name="view_mode">form</field><field name="target">new</field></record>
-  <menuitem id="menu_starpil_loyalty_scan" name="Scan Member Card" parent="starpil_loyalty.menu_starpil_loyalty" action="action_starpil_loyalty_member_scan" sequence="5"/>
-</odoo>
