@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="portal_loyalty_wallet" name="Starpil Loyalty Wallet">
+    <t t-call="portal.portal_layout">
+      <div class="container py-5 starpil-loyalty-wallet">
+        <div t-if="not account" class="alert alert-warning">No active Starpil loyalty program is configured.</div>
+        <t t-else="">
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-7"><span class="kicker">Starpil Pro Rewards</span><h1>Your loyalty wallet.</h1><div class="row g-3 my-4"><div class="col-sm-6"><div class="card p-4 h-100"><small>Available points</small><strong class="display-5" t-out="account.points_balance"/></div></div><div class="col-sm-6"><div class="card p-4 h-100"><small>Current tier</small><strong class="display-5" t-out="account.tier_id.name or 'Member'"/><span t-if="account.tier_id"><t t-out="account.tier_id.multiplier"/>× points rate</span></div></div></div></div>
+            <div class="col-lg-5"><div class="p-4 h-100 text-white" style="background:#24191d;border-top:5px solid #ff9ebe"><small>DIGITAL MEMBER CARD</small><h2 class="text-white mt-3" t-out="account.partner_id.name"/><p t-out="account.member_code"/><img class="bg-white p-2 w-100" t-att-src="'/report/barcode/?barcode_type=Code128&amp;value=%s&amp;width=700&amp;height=140&amp;humanreadable=1' % account.member_code" alt="Digital membership barcode"/><p class="mt-3 mb-0">Present this card for staff to scan in Odoo.</p></div></div>
+          </div>
+          <section class="mt-5"><h2>Rewards you can redeem</h2><div class="row g-3"><div t-foreach="rewards" t-as="reward" class="col-md-4"><div class="card p-4 h-100"><small t-out="'%s points' % reward.points_cost"/><h3 t-out="reward.name"/><p><t t-out="reward.discount_value"/><t t-if="reward.reward_type == 'percent'">%</t><t t-else=""> off</t></p><form t-if="account.points_balance &gt;= reward.points_cost" t-att-action="'/my/starpil/loyalty/redeem/%s' % reward.id" method="post"><input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/><button class="btn btn-dark" type="submit">Redeem reward</button></form><span t-else="" class="text-muted">Keep earning to unlock</span></div></div></div></section>
+          <section class="mt-5"><h2>Points history</h2><div class="table-responsive"><table class="table"><thead><tr><th>Date</th><th>Activity</th><th>Expiry</th><th class="text-end">Points</th></tr></thead><tbody><tr t-foreach="account.transaction_ids[:20]" t-as="transaction"><td><span t-field="transaction.date" t-options='{"widget":"date"}'/></td><td t-out="transaction.description"/><td><span t-if="transaction.expiry_date" t-field="transaction.expiry_date"/><span t-else="">—</span></td><td class="text-end fw-bold" t-out="transaction.points"/></tr></tbody></table></div></section>
+          <section t-if="coupons" class="mt-5"><h2>Your reward coupons</h2><div class="row g-3"><div t-foreach="coupons" t-as="coupon" class="col-md-4"><div class="card p-4"><small t-out="coupon.state"/><strong class="fs-4" t-out="coupon.code"/><span>Expires <t t-field="coupon.expiry_date"/></span></div></div></div></section>
+        </t>
+      </div>
+    </t>
+  </template>
+</odoo>
