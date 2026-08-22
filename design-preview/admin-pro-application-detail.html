@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Starpil Caribbean Pro application review prototype for the future Odoo implementation.">
+  <title>Review Pro Application | Starpil Admin</title>
+  <link rel="icon" type="image/png" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body" data-admin-page="application-detail">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" data-admin-sidebar>
+      <div class="admin-brand"><img src="assets/images/starpil-wordmark.png" alt="Starpil"><span>PRO ADMIN</span></div>
+      <nav class="admin-nav" aria-label="Administration">
+        <small>Workspace</small><a href="admin-overview.html"><span>Overview</span></a><a class="is-active" href="admin-pro-applications.html"><span>Pro Applications</span><em>8</em></a><a href="#"><span>Professional Customers</span></a>
+        <small>Commerce</small><a href="#"><span>Products &amp; Pricing</span></a><a href="#"><span>Orders</span><em>12</em></a><a href="admin-payments.html"><span>Payments</span></a><a href="admin-bank-transfers.html"><span>Bank Transfer Reviews</span><em>4</em></a><a href="admin-shipping.html"><span>Shipping &amp; Fulfilment</span></a><a href="admin-loyalty.html"><span>Loyalty Program</span></a>
+        <small>Communication</small><a href="admin-email.html"><span>Email &amp; Notifications</span></a><a href="#"><span>System Settings</span></a>
+      </nav>
+      <div class="admin-sidebar-foot"><span>Odoo-powered workflow</span><small>HTML experience prototype</small></div>
+    </aside>
+
+    <div class="admin-workspace">
+      <header class="admin-topbar">
+        <button class="admin-mobile-menu" type="button" data-admin-menu aria-label="Open admin navigation">☰</button>
+        <div class="admin-search"><span>⌕</span><input type="search" placeholder="Search applications, people or businesses"></div>
+        <div class="admin-profile"><div><strong>Starpil Administrator</strong><span>Full access</span></div><button type="button">SA</button></div>
+      </header>
+
+      <main class="admin-main admin-detail-main">
+        <div class="admin-detail-breadcrumb"><a href="admin-pro-applications.html">← Pro Applications</a><span>Application SP-1048</span></div>
+        <div class="admin-detail-heading">
+          <div class="admin-applicant-heading"><span>AJ</span><div><div class="admin-heading-meta"><span class="admin-status status-pending" data-application-status>Pending review</span><span>Submitted today at 9:42 AM</span></div><h1>Alana James</h1><p>Skin Rituals Studio · Port of Spain, Trinidad</p></div></div>
+          <div class="admin-decision-actions"><button class="admin-button admin-button-danger" type="button" data-admin-decision="reject">Reject</button><button class="admin-button admin-button-secondary" type="button" data-admin-decision="more-info">Request information</button><button class="admin-button admin-button-primary" type="button" data-admin-decision="approve">Approve Pro Access</button></div>
+        </div>
+
+        <div class="admin-review-banner"><div><strong>✓ Email verified</strong><span>The applicant verified alana@example.com today at 9:51 AM.</span></div><span>Ready for administrator review</span></div>
+
+        <div class="admin-detail-layout">
+          <div class="admin-detail-content">
+            <section class="admin-panel admin-information-panel">
+              <div class="admin-section-heading"><div><span>Applicant information</span><p>Details provided during the one-time Pro account signup.</p></div><button type="button" data-admin-edit-note>Edit details</button></div>
+              <div class="admin-detail-grid">
+                <div><small>Full name</small><strong>Alana James</strong></div><div><small>Email address</small><strong>alana@example.com</strong></div><div><small>Contact number</small><strong>+1 (868) 555-0148</strong></div><div><small>Location</small><strong>Port of Spain, Trinidad</strong></div><div><small>Business name</small><strong>Skin Rituals Studio</strong></div><div><small>Professional role</small><strong>Certified Esthetician</strong></div><div><small>Years in practice</small><strong>4 years</strong></div><div><small>Preferred fulfilment</small><strong>Local courier</strong></div>
+              </div>
+            </section>
+
+            <section class="admin-panel admin-certificate-card">
+              <div class="admin-section-heading"><div><span>Professional certification</span><p>Uploaded securely with the application.</p></div><span class="admin-file-ready">File received</span></div>
+              <div class="admin-certificate-preview">
+                <div class="certificate-document"><span>PROFESSIONAL CERTIFICATE</span><strong>Certificate of Esthetics</strong><p>This preview represents the securely uploaded professional document.</p><div><small>Applicant</small><b>Alana James</b></div><div><small>Institution</small><b>Caribbean Beauty Institute</b></div><div><small>Completion year</small><b>2022</b></div></div>
+                <div class="certificate-meta"><div><small>File name</small><strong>alana-james-certificate.pdf</strong></div><div><small>File type</small><strong>PDF · 1.8 MB</strong></div><div><small>Uploaded</small><strong>Today · 9:42 AM</strong></div><div class="certificate-actions"><button class="admin-button admin-button-secondary" type="button" data-view-certificate>View full certificate</button><button type="button" data-download-demo>Download</button></div></div>
+              </div>
+            </section>
+
+            <section class="admin-panel admin-notes-panel">
+              <div class="admin-section-heading"><div><span>Internal review notes</span><p>Visible to administrators only.</p></div><span>Not shared with applicant</span></div>
+              <textarea data-admin-note placeholder="Add observations about the applicant, certificate or approval decision..."></textarea>
+              <div><button class="admin-button admin-button-secondary" type="button" data-save-admin-note>Save internal note</button></div>
+            </section>
+          </div>
+
+          <aside class="admin-detail-aside">
+            <section class="admin-panel admin-account-card"><div class="admin-section-heading"><div><span>Account readiness</span><p>Access remains locked until approval.</p></div></div><ul><li><span>✓</span><div><strong>User account created</strong><small>Inactive Pro access</small></div></li><li><span>✓</span><div><strong>Email address verified</strong><small>Single-use link completed</small></div></li><li><span>✓</span><div><strong>Certificate uploaded</strong><small>Ready for review</small></div></li><li class="is-pending"><span>•</span><div><strong>Administrator decision</strong><small>Pending</small></div></li><li class="is-locked"><span>⌑</span><div><strong>Professional pricing</strong><small>Locked</small></div></li><li class="is-locked" data-loyalty-enrollment><span>★</span><div><strong>Pro Rewards membership</strong><small>Creates automatically on approval</small></div></li></ul></section>
+
+            <section class="admin-panel admin-timeline-card"><div class="admin-section-heading"><div><span>Application activity</span><p>Complete account and review history.</p></div></div><div class="admin-timeline" data-admin-timeline><div class="is-current"><span></span><div><strong>Awaiting administrator review</strong><small>Today · 9:51 AM</small></div></div><div><span></span><div><strong>Email address verified</strong><small>Today · 9:51 AM</small></div></div><div><span></span><div><strong>Verification email sent</strong><small>Today · 9:43 AM</small></div></div><div><span></span><div><strong>Application submitted</strong><small>Today · 9:42 AM</small></div></div></div></section>
+
+            <section class="admin-panel admin-email-card"><div class="admin-section-heading"><div><span>Automated emails</span><p>Odoo will send these messages.</p></div></div><div><span>✓</span><p><strong>Verify your email</strong><small>Sent and completed</small></p></div><div><span>✓</span><p><strong>Email verified</strong><small>Sent to applicant</small></p></div><div><span>✓</span><p><strong>New verified application</strong><small>Applicant details sent to administrator</small></p></div><div class="is-pending"><span>•</span><p><strong>Approval decision</strong><small>Sends after admin action</small></p></div></section>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="admin-sidebar-overlay" data-admin-sidebar-overlay></div>
+
+  <div class="admin-modal" data-admin-decision-modal aria-hidden="true">
+    <div class="admin-modal-dialog"><button class="admin-modal-close" type="button" data-admin-modal-close aria-label="Close">×</button><span class="admin-eyebrow">Pro application decision</span><h2 data-admin-modal-title>Approve Pro Access</h2><p data-admin-modal-description>Professional pricing and ordering will become available immediately.</p><div class="field"><label for="admin-decision-note">Message or reason</label><textarea id="admin-decision-note" data-admin-decision-note placeholder="Add an optional message for the applicant..."></textarea></div><label class="admin-email-check"><input type="checkbox" checked><span>Send the appropriate decision email to the applicant</span></label><button class="admin-button admin-button-primary" type="button" data-admin-confirm-decision>Confirm approval</button></div>
+  </div>
+
+  <div class="admin-modal" data-admin-certificate-modal aria-hidden="true">
+    <div class="admin-modal-dialog admin-certificate-dialog"><button class="admin-modal-close" type="button" data-certificate-close aria-label="Close">×</button><span class="admin-eyebrow">Secure certificate viewer</span><h2>Alana James</h2><div class="certificate-document certificate-document-full"><span>PROFESSIONAL CERTIFICATE</span><strong>Certificate of Esthetics</strong><p>Issued by the Caribbean Beauty Institute</p><div><small>Applicant</small><b>Alana James</b></div><div><small>Completion year</small><b>2022</b></div></div></div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
