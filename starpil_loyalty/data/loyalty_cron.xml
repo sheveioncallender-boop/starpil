@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
-  <record id="ir_cron_starpil_post_paid_points" model="ir.cron">
-    <field name="name">Starpil: Post points for paid orders</field><field name="model_id" ref="sale.model_sale_order"/><field name="state">code</field><field name="code">model._cron_post_paid_order_points()</field><field name="interval_number">15</field><field name="interval_type">minutes</field>
-  </record>
-  <record id="ir_cron_starpil_expire_points" model="ir.cron">
-    <field name="name">Starpil: Expire loyalty points</field><field name="model_id" ref="model_starpil_loyalty_transaction"/><field name="state">code</field><field name="code">model._cron_expire_points()</field><field name="interval_number">1</field><field name="interval_type">days</field>
-  </record>
-</odoo>
