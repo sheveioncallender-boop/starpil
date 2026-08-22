@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_starpil_collection_list" model="ir.ui.view">
+    <field name="name">product.public.category.starpil.list</field>
+    <field name="model">product.public.category</field>
+    <field name="arch" type="xml">
+      <list string="Website Collections" default_order="starpil_header_sequence,sequence,name">
+        <field name="sequence" widget="handle"/>
+        <field name="name"/>
+        <field name="parent_id" optional="show"/>
+        <field name="website_id" optional="show"/>
+        <field name="starpil_show_in_header" optional="show"/>
+        <field name="starpil_header_sequence" optional="show"/>
+        <field name="starpil_show_on_home" optional="show"/>
+        <field name="starpil_card_style" optional="show"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="view_starpil_collection_form" model="ir.ui.view">
+    <field name="name">product.public.category.starpil.form</field>
+    <field name="model">product.public.category</field>
+    <field name="arch" type="xml">
+      <form string="Website Collection">
+        <sheet>
+          <div class="oe_title"><label for="name"/><h1><field name="name"/></h1></div>
+          <group>
+            <group string="Odoo Catalogue">
+              <field name="parent_id"/>
+              <field name="website_id"/>
+              <field name="sequence"/>
+            </group>
+            <group string="Starpil Navigation">
+              <field name="starpil_show_in_header"/>
+              <field name="starpil_header_sequence" invisible="not starpil_show_in_header"/>
+              <field name="starpil_show_on_home"/>
+              <field name="starpil_card_style" invisible="not starpil_show_on_home"/>
+              <field name="starpil_card_kicker" invisible="not starpil_show_on_home"/>
+            </group>
+          </group>
+          <group string="Collection Image">
+            <field name="image_1920" widget="image" class="oe_avatar"/>
+          </group>
+          <notebook>
+            <page string="Website Description"><field name="website_description" widget="html" nolabel="1"/></page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_starpil_collections" model="ir.actions.act_window">
+    <field name="name">Website Collections</field>
+    <field name="res_model">product.public.category</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create a Starpil website collection</p>
+      <p>Use these Odoo categories for product assignment, storefront filters, homepage cards and the live header tabs.</p>
+    </field>
+  </record>
+
+  <record id="action_starpil_collections_list" model="ir.actions.act_window.view">
+    <field name="sequence" eval="1"/>
+    <field name="view_mode">list</field>
+    <field name="view_id" ref="view_starpil_collection_list"/>
+    <field name="act_window_id" ref="action_starpil_collections"/>
+  </record>
+  <record id="action_starpil_collections_form" model="ir.actions.act_window.view">
+    <field name="sequence" eval="2"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_starpil_collection_form"/>
+    <field name="act_window_id" ref="action_starpil_collections"/>
+  </record>
+
+  <menuitem id="menu_starpil_collections" name="Website Collections" parent="starpil_pro_core.menu_starpil_root" action="action_starpil_collections" sequence="20" groups="starpil_pro_core.group_starpil_pro_manager"/>
+</odoo>
