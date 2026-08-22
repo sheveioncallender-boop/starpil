@@ -1,0 +1,20 @@
+{
+    "name": "Starpil Pro Account Core",
+    "version": "19.0.2.0.0",
+    "category": "Website/eCommerce",
+    "summary": "Verified professional applications and protected professional accounts",
+    "license": "LGPL-3",
+    "author": "Starpil Caribbean",
+    "website": "https://www.instagram.com/starpilwaxtt/",
+    "depends": ["auth_signup", "contacts", "mail", "portal", "website"],
+    "data": [
+        "security/starpil_pro_security.xml",
+        "security/ir.model.access.csv",
+        "data/mail_templates.xml",
+        "views/pro_application_views.xml",
+        "views/res_partner_views.xml",
+        "views/pro_account_templates.xml",
+    ],
+    "installable": True,
+    "application": True,
+}
